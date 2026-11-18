@@ -225,3 +225,4 @@ export async function generateProductionPdf(
 
   return doc.output('blob');
 }
+

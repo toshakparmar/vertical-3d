@@ -102,3 +102,4 @@ export function decodeConfigFromUrl(encoded: string): ConfigurationState | null 
     return null;
   }
 }
+

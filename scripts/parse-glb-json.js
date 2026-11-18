@@ -60,3 +60,4 @@ for (const file of files) {
   fs.mkdirSync('docs/glb-json', { recursive: true });
   fs.writeFileSync(`docs/glb-json/${file}.json`, JSON.stringify(gltf, null, 2));
 }
+

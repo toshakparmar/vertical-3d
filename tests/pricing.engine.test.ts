@@ -217,3 +217,4 @@ describe('Pricing Engine', () => {
     expect(hash3).not.toBe(hash1);
   });
 });
+

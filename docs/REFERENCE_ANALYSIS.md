@@ -100,3 +100,4 @@ The configurator follows a 4-step progressive disclosure model, maintaining cont
 1. **State Independence**: 2D canvas coordinates are normalized [0..1] UV coordinates, allowing dynamic resolution scaling (e.g. 512px low-memory mobile preview up to 2048px high-DPI desktop texture) without drift.
 2. **Shopify Integration Readiness**: Customer choices output clean line-item properties (`_configuration_id`, `_quote_id`, `_pdf_url`, `_config_json_url`) preserving the server price authority model.
 3. **Reusability**: All steps, options, mesh associations, and pricing rules are specified via declarative schema (`ProductDefinition`), making it trivial to introduce additional tent dimensions (8x8, 5x5, 6.5x6.5) or table covers without refactoring the engine.
+

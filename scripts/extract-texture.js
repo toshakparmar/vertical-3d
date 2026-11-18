@@ -18,3 +18,4 @@ fs.mkdirSync('docs/extracted', { recursive: true });
 fs.writeFileSync('docs/extracted/fabric_Mat_BaseColor.png', imgBuf);
 
 console.log(`Extracted fabric_Mat_BaseColor.png (${(imgBuf.length / 1024).toFixed(1)} KB)`);
+

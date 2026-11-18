@@ -16,3 +16,4 @@ export async function initMocks() {
   });
   console.log('[MSW] Mock Service Worker running for pricing, cart, and asset uploads');
 }
+

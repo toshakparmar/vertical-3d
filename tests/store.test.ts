@@ -97,3 +97,4 @@ describe('Zustand Configuration Store', () => {
     expect(useStore.getState().dirtySectionIds['canopy-front']).toBe(true);
   });
 });
+

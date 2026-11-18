@@ -16,3 +16,4 @@ console.log('\nMaterials:');
 gltf.materials?.forEach((mat, idx) => {
   console.log(`Mat [${idx}]: name="${mat.name}"`, mat.pbrMetallicRoughness);
 });
+

@@ -199,3 +199,4 @@ export const ConfigurationStateSchema = z.object({
   meta: ConfigurationMetaSchema,
 });
 export type ConfigurationState = z.infer<typeof ConfigurationStateSchema>;
+

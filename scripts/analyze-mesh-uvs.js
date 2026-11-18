@@ -31,3 +31,4 @@ mesh.primitives.forEach((prim, idx) => {
     console.log(`POS Accessor [${posAccessorIdx}]: count=${acc.count}, min=[${acc.min}], max=[${acc.max}]`);
   }
 });
+

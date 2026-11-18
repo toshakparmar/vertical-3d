@@ -51,3 +51,4 @@ export const BackWall: React.FC = () => {
     </group>
   );
 };
+

@@ -281,3 +281,4 @@ dist/assets/index.js             742.17 kB │ gzip: 240.75 kB (Configurator App
 2. **Server-Side Headless WebGL Renders**: Move the PDF generation pipeline to a serverless AWS Lambda or Cloudflare Worker running Headless Chrome / Puppeteer for 300 DPI print-ready production proofs.
 3. **Draco Geometry Decompression**: Implement Draco worker decoders for sub-2MB initial 3D mesh downloads over mobile 4G networks.
 4. **AR (Augmented Reality) QuickLook**: Export USDZ/WebXR models so trade show exhibitors can preview the tent at 1:1 scale in their booth space using iOS AR Quick Look and Android Scene Viewer.
+

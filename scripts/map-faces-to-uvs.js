@@ -57,3 +57,4 @@ console.log('--- UV BOUNDS PER 3D FACE ---');
 for (const [name, f] of Object.entries(faces)) {
   console.log(`${name.toUpperCase()}: count=${f.uvs.length}, U=[${f.uMin.toFixed(3)} .. ${f.uMax.toFixed(3)}], V=[${f.vMin.toFixed(3)} .. ${f.vMax.toFixed(3)}]`);
 }
+

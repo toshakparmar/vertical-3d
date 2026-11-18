@@ -198,3 +198,4 @@ export const CanvasStage: React.FC<CanvasStageProps> = ({
     </div>
   );
 };
+

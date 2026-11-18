@@ -174,3 +174,4 @@ export const LayerPropertiesPanel: React.FC<LayerPropertiesPanelProps> = ({ sect
     </div>
   );
 };
+

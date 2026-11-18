@@ -281,3 +281,4 @@ components:
           enum: [base, variant, option, customization, quantityDiscount]
         amount:
           type: number
+

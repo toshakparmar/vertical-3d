@@ -35,3 +35,4 @@ export type Quote = z.infer<typeof QuoteSchema>;
 export interface PricingService {
   quote(config: ConfigurationState): Promise<Quote>;
 }
+

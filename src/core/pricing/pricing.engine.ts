@@ -198,3 +198,4 @@ export function calculateQuote(config: ConfigurationState): Quote {
     configHash: generateConfigHash(config),
   };
 }
+

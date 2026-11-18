@@ -67,3 +67,4 @@
     { "minQty": 25, "maxQty": 9999, "discountPercent": 20, "label": "Enterprise Volume Discount (20%)" }
   ]
 }
+

@@ -406,3 +406,4 @@ export const canopy10x10Definition: ProductDefinition = {
     },
   ],
 };
+

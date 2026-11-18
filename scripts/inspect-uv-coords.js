@@ -34,3 +34,4 @@ for (let i = 0; i < uvAcc.count; i++) {
 
 console.log(`UV Bounds: U=[${minU.toFixed(4)} .. ${maxU.toFixed(4)}], V=[${minV.toFixed(4)} .. ${maxV.toFixed(4)}]`);
 console.log('Sample UVs:', sampleUVs);
+

@@ -13,3 +13,4 @@ export function getProductDefinition(productId: string): ProductDefinition {
   }
   return prod;
 }
+

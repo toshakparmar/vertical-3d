@@ -36,3 +36,4 @@ jobs:
 
       - name: Build production bundle
         run: pnpm build
+
