@@ -102,7 +102,7 @@ export class MockShopifyAdapter implements ShopifyAdapter {
   }
 
   async addToCart(payload: AddToCartPayload): Promise<CartState> {
-    const { token, price } = await this.prepareCustomPrice(payload);
+    const { token } = await this.prepareCustomPrice(payload);
 
     const properties: CartItemProperties = {
       ...payload.properties,

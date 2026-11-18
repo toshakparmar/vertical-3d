@@ -30,10 +30,16 @@ export default defineConfig({
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
       output: {
-        manualChunks: {
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
-          konva: ['konva', 'react-konva'],
-          vendor: ['react', 'react-dom', 'zustand', 'immer', 'zod', '@tanstack/react-query'],
+        manualChunks(id) {
+          if (id.includes('node_modules/three') || id.includes('@react-three')) {
+            return 'three';
+          }
+          if (id.includes('node_modules/konva') || id.includes('react-konva')) {
+            return 'konva';
+          }
+          if (id.includes('node_modules/jspdf') || id.includes('html2canvas')) {
+            return 'jspdf';
+          }
         },
       },
     },

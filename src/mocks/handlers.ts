@@ -71,13 +71,10 @@ export const handlers = [
   }),
 
   // 4. Order Attachments (PDF Production Summary)
-  http.post('/api/orders/attachments', async ({ request }) => {
-    const formData = await request.formData();
-    const pdf = formData.get('pdf');
-
+  http.post('/api/orders/attachments', async () => {
     return HttpResponse.json({
       attachmentId: `att_${Date.now()}`,
-      pdfUrl: URL.createObjectURL ? '' : 'https://cdn.example.com/proofs/proof-summary.pdf',
+      pdfUrl: 'https://cdn.example.com/proofs/proof-summary.pdf',
       status: 'attached',
     });
   }),

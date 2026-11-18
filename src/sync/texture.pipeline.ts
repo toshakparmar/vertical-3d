@@ -1,12 +1,14 @@
 import * as THREE from 'three';
-import { SectionConfig, UVTemplate, Layer, TextLayer, ImageLayer } from '../core/schema';
+import { SectionConfig, UVTemplate, TextLayer, ImageLayer } from '../core/schema';
+
+export type QualityTier = 'high' | 'medium' | 'low';
 
 export interface TextureQualitySettings {
   resolution: number; // e.g. 2048 for high, 1024 for medium, 512 for low
   anisotropy: number;
 }
 
-export const QUALITY_PRESETS: Record<'high' | 'medium' | 'low', TextureQualitySettings> = {
+export const QUALITY_PRESETS: Record<QualityTier, TextureQualitySettings> = {
   high: { resolution: 2048, anisotropy: 8 },
   medium: { resolution: 1024, anisotropy: 4 },
   low: { resolution: 512, anisotropy: 1 },
@@ -70,9 +72,9 @@ export const imageCache = new ImageCache();
  * Renders normalized UV layers onto a target HTMLCanvasElement.
  */
 export async function renderSectionToCanvas(
-  sectionId: string,
+  _sectionId: string,
   config: SectionConfig,
-  uvTemplate: UVTemplate,
+  _uvTemplate: UVTemplate,
   canvas: HTMLCanvasElement
 ): Promise<void> {
   const ctx = canvas.getContext('2d');
@@ -114,7 +116,7 @@ export async function renderSectionToCanvas(
       ctx.fillStyle = layer.fill;
       ctx.fillRect(-layerW / 2, -layerH / 2, layerW, layerH);
     } else if (layer.type === 'text') {
-      renderTextLayer(ctx, layer, layerW, layerH);
+      renderTextLayer(ctx, layer);
     } else if (layer.type === 'image') {
       await renderImageLayer(ctx, layer, layerW, layerH);
     }
@@ -123,12 +125,7 @@ export async function renderSectionToCanvas(
   }
 }
 
-function renderTextLayer(
-  ctx: CanvasRenderingContext2D,
-  layer: TextLayer,
-  width: number,
-  height: number
-) {
+function renderTextLayer(ctx: CanvasRenderingContext2D, layer: TextLayer) {
   ctx.fillStyle = layer.fill || '#000000';
   ctx.textAlign = layer.align || 'center';
   ctx.textBaseline = 'middle';
@@ -200,7 +197,7 @@ export class TexturePipelineManager {
 
   public getOrCreateMasterTexture(
     type: 'fabric' | 'back-wall',
-    initialResolution: number = 2048
+    _initialResolution: number = 2048
   ): THREE.CanvasTexture {
     if (this.textures.has(type)) {
       return this.textures.get(type)!;

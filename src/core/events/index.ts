@@ -15,7 +15,7 @@ export type ConfiguratorEventMap = {
 type EventCallback<T> = (data: T) => void;
 
 class TypedEventBus {
-  private listeners: { [K in keyof ConfiguratorEventMap]?: EventCallback<ConfiguratorEventMap[K]>[] } = {};
+  private listeners: { [K in keyof ConfiguratorEventMap]?: EventCallback<any>[] } = {};
 
   on<K extends keyof ConfiguratorEventMap>(
     event: K,
