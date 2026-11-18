@@ -1,0 +1,69 @@
+{
+  "currency": "USD",
+  "quoteValidityMinutes": 60,
+  "baseVariants": {
+    "canopy-10x10": {
+      "label": "10ft x 10ft Custom Canopy Tent",
+      "basePrice": 499.00
+    },
+    "canopy-8x8": {
+      "label": "8ft x 8ft Custom Canopy Tent",
+      "basePrice": 429.00
+    },
+    "canopy-6.5x6.5": {
+      "label": "6.5ft x 6.5ft Custom Canopy Tent",
+      "basePrice": 379.00
+    },
+    "canopy-5x5": {
+      "label": "5ft x 5ft Custom Canopy Tent",
+      "basePrice": 329.00
+    }
+  },
+  "optionModifiers": {
+    "package": {
+      "complete": { "label": "Full Canopy + Frame Package", "price": 0 },
+      "canopy-only": { "label": "Canopy Top Only (Replacement)", "price": -120.00 },
+      "frame-only": { "label": "Frame Hardware Only", "price": -150.00 }
+    },
+    "frameGrade": {
+      "steel-32mm": { "label": "Standard Steel Frame (32mm)", "price": 0 },
+      "aluminum-40mm": { "label": "Commercial Hex Aluminum (40mm)", "price": 120.00 },
+      "aluminum-50mm": { "label": "Heavy-Duty Hex Aluminum (50mm)", "price": 250.00 }
+    },
+    "backWall": {
+      "none": { "label": "No Back Wall", "price": 0 },
+      "single-sided": { "label": "Full Back Wall (Single-Sided)", "price": 149.00 },
+      "double-sided": { "label": "Full Back Wall (Double-Sided)", "price": 229.00 }
+    },
+    "sideWalls": {
+      "none": { "label": "No Side Walls", "price": 0 },
+      "pair-half-walls": { "label": "Pair of Half Walls (with rail bars)", "price": 189.00 },
+      "pair-full-walls": { "label": "Pair of Full Side Walls", "price": 269.00 }
+    },
+    "accessories": {
+      "none": { "label": "Standard Stakes & Ropes", "price": 0 },
+      "roller-bag": { "label": "Deluxe Heavy-Duty Wheeled Roller Bag", "price": 49.00 },
+      "sandbag-set": { "label": "Heavy-Duty Sandbags (Set of 4)", "price": 59.00 },
+      "cast-iron-weights": { "label": "Cast Iron Weight Plates (Set of 4)", "price": 89.00 },
+      "pro-accessory-bundle": { "label": "Pro Bundle (Roller Bag + Weights)", "price": 129.00 }
+    },
+    "turnaround": {
+      "standard": { "label": "Standard Production (5 Business Days)", "price": 0 },
+      "rush-48h": { "label": "Rush Production (48 Hours)", "price": 95.00 }
+    }
+  },
+  "customizationSurcharges": {
+    "freeIncludedImages": 2,
+    "perAdditionalImagePrice": 15.00,
+    "freeIncludedTextLayers": 4,
+    "perAdditionalTextPrice": 5.00,
+    "backWallPrintSurcharge": 35.00
+  },
+  "quantityDiscounts": [
+    { "minQty": 1, "maxQty": 2, "discountPercent": 0, "label": "Standard Rate" },
+    { "minQty": 3, "maxQty": 5, "discountPercent": 5, "label": "Tier 1 Volume Discount (5%)" },
+    { "minQty": 6, "maxQty": 9, "discountPercent": 10, "label": "Tier 2 Volume Discount (10%)" },
+    { "minQty": 10, "maxQty": 24, "discountPercent": 15, "label": "Corporate Volume Discount (15%)" },
+    { "minQty": 25, "maxQty": 9999, "discountPercent": 20, "label": "Enterprise Volume Discount (20%)" }
+  ]
+}

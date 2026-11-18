@@ -1,0 +1,283 @@
+openapi: 3.0.3
+info:
+  title: Interactive Product Configurator API
+  description: Backend API for 3D Product Configurator (Canopy Tent), dynamic pricing engine, asset storage, and Shopify cart preparation.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+    description: Local MSW mock server
+  - url: https://api.mvpvisuals.com/v1
+    description: Production API server
+
+paths:
+  /pricing/quote:
+    post:
+      summary: Calculate dynamic quote for a configuration
+      description: Pure pricing engine calculates itemized breakdown, volume discounts, option modifiers, and returns a cryptographically hashed quote.
+      operationId: calculateQuote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfigurationState'
+      responses:
+        '200':
+          description: Successful dynamic pricing quote
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '400':
+          description: Invalid configuration payload
+
+  /assets:
+    post:
+      summary: Upload design asset (logo / artwork)
+      description: Uploads customer image or vector asset, stores in CDN bucket, returns assetId and URL.
+      operationId: uploadAsset
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Asset uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  assetId:
+                    type: string
+                  assetUrl:
+                    type: string
+                  fileName:
+                    type: string
+                  fileSize:
+                    type: integer
+                  mimeType:
+                    type: string
+
+  /cart/prepare:
+    post:
+      summary: Validate configuration and generate authorized price token for Shopify
+      description: Server-side price authority check. Validates that line item price matches configHash and returns secure token for Shopify Cart Transform / Draft Order.
+      operationId: prepareCartPrice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - variantId
+                - quantity
+                - quoteId
+                - configHash
+              properties:
+                variantId:
+                  type: string
+                quantity:
+                  type: integer
+                quoteId:
+                  type: string
+                configHash:
+                  type: string
+      responses:
+        '200':
+          description: Price authorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  authorizedPrice:
+                    type: number
+                  expiresAt:
+                    type: string
+
+  /orders/attachments:
+    post:
+      summary: Attach production PDF proof to pending order
+      description: Receives client-rendered PDF blob or triggers server-side headless render.
+      operationId: attachOrderPdf
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pdf:
+                  type: string
+                  format: binary
+                orderId:
+                  type: string
+                configHash:
+                  type: string
+      responses:
+        '201':
+          description: PDF attached successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pdfUrl:
+                    type: string
+                  attachmentId:
+                    type: string
+
+components:
+  schemas:
+    ConfigurationState:
+      type: object
+      required:
+        - schemaVersion
+        - productId
+        - variantId
+        - selections
+        - sections
+        - quantity
+      properties:
+        schemaVersion:
+          type: string
+          example: '1.0.0'
+        productId:
+          type: string
+          example: 'canopy-tent'
+        variantId:
+          type: string
+          example: 'canopy-10x10'
+        selections:
+          type: object
+          additionalProperties:
+            type: string
+        sections:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/SectionConfig'
+        quantity:
+          type: integer
+          minimum: 1
+          default: 1
+        meta:
+          type: object
+          properties:
+            createdAt:
+              type: string
+            updatedAt:
+              type: string
+            previewUrls:
+              type: object
+
+    SectionConfig:
+      type: object
+      required:
+        - backgroundColor
+        - layers
+      properties:
+        backgroundColor:
+          type: string
+          example: '#FFFFFF'
+        layers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Layer'
+
+    Layer:
+      type: object
+      required:
+        - id
+        - sectionId
+        - type
+        - x
+        - y
+        - width
+        - height
+      properties:
+        id:
+          type: string
+        sectionId:
+          type: string
+        type:
+          type: string
+          enum: [text, image, colorFill]
+        x:
+          type: number
+          description: Normalized UV X (0..1)
+        y:
+          type: number
+          description: Normalized UV Y (0..1)
+        width:
+          type: number
+        height:
+          type: number
+        rotation:
+          type: number
+        scale:
+          type: number
+        visible:
+          type: boolean
+
+    Quote:
+      type: object
+      required:
+        - quoteId
+        - currency
+        - lineItems
+        - subtotal
+        - total
+        - unitPrice
+        - quantity
+        - validUntil
+        - configHash
+      properties:
+        quoteId:
+          type: string
+        currency:
+          type: string
+          example: 'USD'
+        lineItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/PricingLineItem'
+        subtotal:
+          type: number
+        total:
+          type: number
+        unitPrice:
+          type: number
+        quantity:
+          type: integer
+        validUntil:
+          type: string
+        configHash:
+          type: string
+
+    PricingLineItem:
+      type: object
+      required:
+        - id
+        - label
+        - type
+        - amount
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        type:
+          type: string
+          enum: [base, variant, option, customization, quantityDiscount]
+        amount:
+          type: number

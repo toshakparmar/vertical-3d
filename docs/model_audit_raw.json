@@ -1,0 +1,611 @@
+[
+  {
+    "fileName": "Tent 6.5_6.5.glb",
+    "fileSizeMB": "10.04",
+    "totalTriangles": 69298,
+    "meshCount": 3,
+    "materialCount": 3,
+    "textureCount": 6,
+    "meshes": [
+      {
+        "name": "Mesh",
+        "primitivesCount": 2,
+        "triangles": 3762,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "fabric_Mat",
+            "triangles": 2566,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          },
+          {
+            "index": 1,
+            "material": "Inner_fabric",
+            "triangles": 1196,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": []
+          }
+        ]
+      },
+      {
+        "name": "Mesh.002",
+        "primitivesCount": 1,
+        "triangles": 9520,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Metal_mat",
+            "triangles": 9520,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mesh.001",
+        "primitivesCount": 1,
+        "triangles": 56016,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Metal_mat",
+            "triangles": 56016,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "fabric_Mat",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metallic": 1,
+        "slots": [
+          "baseColor",
+          "metallicRoughness",
+          "normal"
+        ]
+      },
+      {
+        "name": "Inner_fabric",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 0.7487671971321106,
+        "metallic": 0,
+        "slots": []
+      },
+      {
+        "name": "Metal_mat",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metallic": 1,
+        "slots": [
+          "baseColor",
+          "metallicRoughness",
+          "normal"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "fabric",
+        "mesh": "Mesh",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "leg",
+        "mesh": "Mesh.002",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "mechanism",
+        "mesh": "Mesh.001",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "TENT_6_5_6_5",
+        "mesh": null,
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "fileName": "Tent_5_5.glb",
+    "fileSizeMB": "9.74",
+    "totalTriangles": 80716,
+    "meshCount": 3,
+    "materialCount": 3,
+    "textureCount": 6,
+    "meshes": [
+      {
+        "name": "Mesh.003",
+        "primitivesCount": 2,
+        "triangles": 15180,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "fabric_Mat",
+            "triangles": 10740,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          },
+          {
+            "index": 1,
+            "material": "Inner_fabric",
+            "triangles": 4440,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": []
+          }
+        ]
+      },
+      {
+        "name": "Mesh.005",
+        "primitivesCount": 1,
+        "triangles": 9520,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Metal_mat",
+            "triangles": 9520,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mesh.004",
+        "primitivesCount": 1,
+        "triangles": 56016,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Metal_mat",
+            "triangles": 56016,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "fabric_Mat",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metallic": 1,
+        "slots": [
+          "baseColor",
+          "metallicRoughness",
+          "normal"
+        ]
+      },
+      {
+        "name": "Inner_fabric",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 0.7487671971321106,
+        "metallic": 0,
+        "slots": []
+      },
+      {
+        "name": "Metal_mat",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metallic": 1,
+        "slots": [
+          "baseColor",
+          "metallicRoughness",
+          "normal"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "fabric",
+        "mesh": "Mesh.003",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "leg5",
+        "mesh": "Mesh.005",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "mechanism3",
+        "mesh": "Mesh.004",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "TENT_5_5",
+        "mesh": null,
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "fileName": "Tent_8_8.glb",
+    "fileSizeMB": "10.62",
+    "totalTriangles": 85084,
+    "meshCount": 3,
+    "materialCount": 3,
+    "textureCount": 6,
+    "meshes": [
+      {
+        "name": "Mesh",
+        "primitivesCount": 2,
+        "triangles": 3632,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Inner_fabric",
+            "triangles": 1157,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": []
+          },
+          {
+            "index": 1,
+            "material": "fabric_Mat",
+            "triangles": 2475,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mesh.001",
+        "primitivesCount": 1,
+        "triangles": 19752,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Metal_mat",
+            "triangles": 19752,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mesh.002",
+        "primitivesCount": 1,
+        "triangles": 61700,
+        "primitives": [
+          {
+            "index": 0,
+            "material": "Metal_mat",
+            "triangles": 61700,
+            "hasUV0": true,
+            "hasUV1": false,
+            "textureSlots": [
+              "baseColor",
+              "metallicRoughness",
+              "normal"
+            ]
+          }
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "name": "Inner_fabric",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 0.7487671971321106,
+        "metallic": 0,
+        "slots": []
+      },
+      {
+        "name": "fabric_Mat",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metallic": 1,
+        "slots": [
+          "baseColor",
+          "metallicRoughness",
+          "normal"
+        ]
+      },
+      {
+        "name": "Metal_mat",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughness": 1,
+        "metallic": 1,
+        "slots": [
+          "baseColor",
+          "metallicRoughness",
+          "normal"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "name": "fabric",
+        "mesh": "Mesh",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "leg",
+        "mesh": "Mesh.001",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "mechanism",
+        "mesh": "Mesh.002",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tent_8_8",
+        "mesh": null,
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  }
+]
